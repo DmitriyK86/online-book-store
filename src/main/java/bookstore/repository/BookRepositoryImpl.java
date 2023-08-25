@@ -45,7 +45,7 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public Optional<Book> findById(Long id) {
         try (Session session = sessionFactory.openSession()) {
-            Book book = session.find(Book.class, id);
+            Book book = session.get(Book.class, id);
             return Optional.ofNullable(book);
         } catch (Exception e) {
             throw new RuntimeException("Can't get all books from DB");
