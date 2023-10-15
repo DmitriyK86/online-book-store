@@ -3,6 +3,7 @@ package bookstore.service;
 import bookstore.dto.cartitem.CartItemAddRequestDto;
 import bookstore.dto.cartitem.CartItemQuantityRequestDto;
 import bookstore.dto.shoppingcart.ShoppingCartDto;
+import bookstore.model.ShoppingCart;
 import org.springframework.security.core.Authentication;
 
 public interface ShoppingCartService {
@@ -12,4 +13,6 @@ public interface ShoppingCartService {
 
     void updateCartItemQuantity(Authentication authentication, Long cartItemId,
                                 CartItemQuantityRequestDto requestDto);
+
+    void clearShoppingCart(ShoppingCart shoppingCart);
 }
