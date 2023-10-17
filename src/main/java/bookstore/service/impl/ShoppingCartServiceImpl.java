@@ -15,6 +15,7 @@ import bookstore.repository.shoppingcart.ShoppingCartRepository;
 import bookstore.service.ShoppingCartService;
 import bookstore.service.UserService;
 import java.util.Optional;
+import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -73,4 +74,10 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         cartItemRepository.save(cartItem);
     }
 
+    public void clearShoppingCart(ShoppingCart shoppingCart) {
+        Set<CartItem> cartItems = shoppingCart.getCartItems();
+        for (CartItem cartItem : cartItems) {
+            cartItemRepository.deleteById(cartItem.getId());
+        }
+    }
 }
