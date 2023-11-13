@@ -127,7 +127,6 @@ public class CategoryServiceTest {
         category.setDescription("Awesome category");
 
         CategoryDto expected = new CategoryDto();
-        expected.setId(1L);
         expected.setId(categoryId);
         expected.setName("Fantasy");
         expected.setDescription("Awesome category");
