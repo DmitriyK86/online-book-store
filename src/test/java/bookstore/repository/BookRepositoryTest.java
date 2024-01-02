@@ -1,4 +1,4 @@
-package bookstore.repsitory;
+package bookstore.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
